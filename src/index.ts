@@ -2,11 +2,16 @@ import "reflect-metadata";
 import { AppDataSource } from "./data-source/data-source";
 import express from "express"
 import clienteRouter from "./routes/cliente";
+import cors from 'cors';
+import usuarioRouter from "./routes/usuario";
+
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.use("/cliente",clienteRouter)
+app.use("/usuario",usuarioRouter)
 
 
 AppDataSource.initialize().then(() => {

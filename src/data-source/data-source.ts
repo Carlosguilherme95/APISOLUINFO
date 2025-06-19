@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm"; 
 import { Cliente } from "../entity/cliente";
+import { Usuario } from "../entity/usuario";
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: "170.238.45.147",
@@ -9,7 +10,7 @@ export const AppDataSource = new DataSource({
   database: "apibackend",
   synchronize: true,
   logging: false,
-  entities: [Cliente],
+  entities: [Cliente, Usuario],
   migrations: [],
   subscribers: [],
 });
