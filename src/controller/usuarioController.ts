@@ -15,7 +15,7 @@ export class UsuarioController{
         const {email, senha} = req.body
 
         try{
-            const loginValidate = this.usuarioService.login(email, senha)
+            const loginValidate = await this.usuarioService.login(email, senha)
             if(!loginValidate){
                 throw new Error("não foi possível fazer login")
             }

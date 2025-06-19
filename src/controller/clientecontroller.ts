@@ -7,7 +7,7 @@ export class ClienteController {
 
   async post(req: Request, res: Response) {
     const data: CreateClienteDTO = req.body;
-
+     console.log("Recebido no corpo da requisição:", req.body)
     try {
       const createClient = await this.clienteService.createCliente(data);
       res.status(201).json(createClient);

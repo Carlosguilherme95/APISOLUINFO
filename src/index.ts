@@ -4,6 +4,7 @@ import express from "express"
 import clienteRouter from "./routes/cliente";
 import cors from 'cors';
 import usuarioRouter from "./routes/usuario";
+import ratRouter from "./routes/rat";
 
 
 const app = express();
@@ -12,7 +13,7 @@ app.use(express.json());
 
 app.use("/cliente",clienteRouter)
 app.use("/usuario",usuarioRouter)
-
+app.use("/rat", ratRouter)
 
 AppDataSource.initialize().then(() => {
   console.log("Conectado ao banco de dados!");

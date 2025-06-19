@@ -13,4 +13,5 @@ export interface CreateClienteDTO {
   uf: string;
   cep: string;
   telefone1: string;
+  email: string;
 }

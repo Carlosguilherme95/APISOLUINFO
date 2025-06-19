@@ -29,4 +29,7 @@ export class Cliente {
     // Contato
     @Column()
     telefone1!: string;
+
+    @Column({nullable:false})
+    email!: string;
 }
